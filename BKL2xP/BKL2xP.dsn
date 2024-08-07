@@ -41,6 +41,14 @@
     )
   )
   (placement
+    (component TestPoint:TestPoint_Pad_D1.0mm
+      (place TP6 167250 -114250 front 0 (PN RST))
+      (place TP5 164000 -114250 front 0 (PN MISO))
+      (place TP4 160750 -114250 front 0 (PN MOSI))
+      (place TP3 167250 -106750 front 0 (PN SCK))
+      (place TP2 164000 -106750 front 0 (PN VCC))
+      (place TP1 161000 -106750 front 0 (PN GND))
+    )
     (component Resistor_SMD:R_0402_1005Metric
       (place R6 142000 -112490 front 90 (PN 10k))
       (place R5 149740 -115000 front 0 (PN 1M))
@@ -86,6 +94,17 @@
     )
   )
   (library
+    (image TestPoint:TestPoint_Pad_D1.0mm
+      (outline (path signal 50  1000 0  923.88 -382.683  707.107 -707.107  382.683 -923.88
+            0 -1000  -382.683 -923.88  -707.107 -707.107  -923.88 -382.683
+            -1000 0  -923.88 382.683  -707.107 707.107  -382.683 923.88
+            0 1000  382.683 923.88  707.107 707.107  923.88 382.683  1000 0))
+      (outline (path signal 120  700 0  619.819 -325.306  397.645 -576.089  84.376 -694.896
+            -248.223 -654.511  -523.958 -464.186  -679.659 -167.521  -679.659 167.521
+            -523.958 464.186  -248.223 654.511  84.376 694.896  397.645 576.089
+            619.819 325.306  700 0))
+      (pin Round[T]Pad_1000_um 1 0 0)
+    )
     (image Resistor_SMD:R_0402_1005Metric
       (outline (path signal 100  -525 -270  -525 270))
       (outline (path signal 100  -525 270  525 270))
@@ -355,6 +374,10 @@
       (pin Rect[T]Pad_4500x2000_um 1 -4250 0)
       (pin Rect[T]Pad_4500x2000_um 2 4250 0)
     )
+    (padstack Round[T]Pad_1000_um
+      (shape (circle F.Cu 1000))
+      (attach off)
+    )
     (padstack Round[A]Pad_2200_um
       (shape (circle F.Cu 2200))
       (shape (circle B.Cu 2200))
@@ -450,12 +473,12 @@
   )
   (network
     (net GND
-      (pins C8-2 C7-2 C1-2 C2-2 C3-2 C4-1 C5-2 C6-2 J1-S1 J1-S1@1 J1-S1@2 J1-S1@3
+      (pins TP1-1 C8-2 C7-2 C1-2 C2-2 C3-2 C4-1 C5-2 C6-2 J1-S1 J1-S1@1 J1-S1@2 J1-S1@3
         J1-B1 J1-A1 J1-B12 J1-A12 R1-1 R2-1 U1-5 U1-15 U1-23 U1-35 U1-43 U1-45)
     )
     (net /VB
-      (pins R6-2 C1-1 C2-1 C3-1 J1-B4 J1-A4 J1-B9 J1-A9 U1-2 U1-7 U1-14 U1-24 U1-34
-        U1-44)
+      (pins TP2-1 R6-2 C1-1 C2-1 C3-1 J1-B4 J1-A4 J1-B9 J1-A9 U1-2 U1-7 U1-14 U1-24
+        U1-34 U1-44)
     )
     (net "Net-(C4-Pad2)"
       (pins R5-2 C4-2 U1-17 Y1-2)
@@ -500,10 +523,10 @@
       (pins R4-1 U1-4)
     )
     (net /C0
-      (pins SW1-2 U1-9)
+      (pins TP3-1 SW1-2 U1-9)
     )
     (net /C1
-      (pins SW2-2 U1-10)
+      (pins TP4-1 SW2-2 U1-10)
     )
     (net "Net-(U1-Pad1)"
       (pins U1-1)
@@ -575,10 +598,10 @@
       (pins U1-42)
     )
     (net /RST
-      (pins R6-1 U1-13)
+      (pins TP6-1 R6-1 U1-13)
     )
     (net /MISO
-      (pins U1-11)
+      (pins TP5-1 U1-11)
     )
     (class kicad_default "" /C0 /C1 /DM /DP /MISO /R0 /RST /VB GND "Net-(C4-Pad2)"
       "Net-(C5-Pad1)" "Net-(C6-Pad1)" "Net-(D1-Pad1)" "Net-(D1-Pad2)" "Net-(J1-PadA5)"
@@ -599,12 +622,14 @@
     )
   )
   (wiring
-    (wire (path F.Cu 250  150000 -112838  150000 -114750  150250 -115000  151270 -115000)(net "Net-(C4-Pad2)")(type protect))
-    (wire (path F.Cu 250  150250 -115000  150250 -115250  151000 -116000)(net "Net-(C4-Pad2)")(type protect))
     (wire (path B.Cu 250  151000 -116000  151000 -113500  154000 -110500)(net "Net-(C4-Pad2)")(type protect))
-    (wire (path F.Cu 250  149500 -112838  149500 -114730  149230 -115000  148230 -115000)(net "Net-(C5-Pad1)")(type protect))
-    (wire (path F.Cu 250  149230 -115000  149230 -115270  148500 -116000)(net "Net-(C5-Pad1)")(type protect))
+    (wire (path F.Cu 250  150250 -115000  150250 -115250  151000 -116000)(net "Net-(C4-Pad2)")(type protect))
+    (wire (path F.Cu 250  150250 -115000  151270 -115000)(net "Net-(C4-Pad2)")(type protect))
+    (wire (path F.Cu 250  150000 -112838  150000 -114750  150250 -115000)(net "Net-(C4-Pad2)")(type protect))
     (wire (path B.Cu 250  148500 -116000  148500 -113500  145500 -110500)(net "Net-(C5-Pad1)")(type protect))
+    (wire (path F.Cu 250  149230 -115000  149230 -115270  148500 -116000)(net "Net-(C5-Pad1)")(type protect))
+    (wire (path F.Cu 250  149230 -115000  148230 -115000)(net "Net-(C5-Pad1)")(type protect))
+    (wire (path F.Cu 250  149500 -112838  149500 -114730  149230 -115000)(net "Net-(C5-Pad1)")(type protect))
     (via "Via[0-1]_800:400_um"  151000 -116000 (net "Net-(C4-Pad2)")(type protect))
     (via "Via[0-1]_800:400_um"  148500 -116000 (net "Net-(C5-Pad1)")(type protect))
   )

@@ -448,8 +448,97 @@ F 3 "~" H 4550 2550 50  0001 C CNN
 $EndComp
 Connection ~ 4650 2550
 Connection ~ 4450 2550
+$Comp
+L power:GND #PWR0102
+U 1 1 66B391F4
+P 7000 1750
+F 0 "#PWR0102" H 7000 1500 50  0001 C CNN
+F 1 "GND" H 7005 1577 50  0000 C CNN
+F 2 "" H 7000 1750 50  0001 C CNN
+F 3 "" H 7000 1750 50  0001 C CNN
+	1    7000 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7250 1750 7000 1750
+Text Label 7250 1950 2    50   ~ 0
+VB
+Text Label 7250 2350 2    50   ~ 0
+C1
 Text Label 6400 2450 0    50   ~ 0
+MISO
+Text Label 7250 2550 2    50   ~ 0
 MISO
 Text Label 5200 2150 2    50   ~ 0
 RST
+Text Label 7250 2750 2    50   ~ 0
+RST
+$Comp
+L Connector:TestPoint TP1
+U 1 1 66B619AB
+P 7250 1750
+F 0 "TP1" V 7204 1938 50  0000 L CNN
+F 1 "TestPoint" V 7295 1938 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 1750 50  0001 C CNN
+F 3 "~" H 7450 1750 50  0001 C CNN
+	1    7250 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 66B6247A
+P 7250 1950
+F 0 "TP2" V 7204 2138 50  0000 L CNN
+F 1 "TestPoint" V 7295 2138 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 1950 50  0001 C CNN
+F 3 "~" H 7450 1950 50  0001 C CNN
+	1    7250 1950
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 66B62AC1
+P 7250 2350
+F 0 "TP4" V 7204 2538 50  0000 L CNN
+F 1 "TestPoint" V 7295 2538 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 2350 50  0001 C CNN
+F 3 "~" H 7450 2350 50  0001 C CNN
+	1    7250 2350
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 66B62DC6
+P 7250 2550
+F 0 "TP5" V 7204 2738 50  0000 L CNN
+F 1 "TestPoint" V 7295 2738 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 2550 50  0001 C CNN
+F 3 "~" H 7450 2550 50  0001 C CNN
+	1    7250 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP6
+U 1 1 66B62F94
+P 7250 2750
+F 0 "TP6" V 7204 2938 50  0000 L CNN
+F 1 "TestPoint" V 7295 2938 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 2750 50  0001 C CNN
+F 3 "~" H 7450 2750 50  0001 C CNN
+	1    7250 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 66B627AE
+P 7250 2150
+F 0 "TP3" V 7204 2338 50  0000 L CNN
+F 1 "TestPoint" V 7295 2338 50  0000 L CNN
+F 2 "TestPoint:TestPoint_Pad_D1.5mm" H 7450 2150 50  0001 C CNN
+F 3 "~" H 7450 2150 50  0001 C CNN
+	1    7250 2150
+	0    1    1    0   
+$EndComp
+Text Label 7250 2150 2    50   ~ 0
+C0
 $EndSCHEMATC
